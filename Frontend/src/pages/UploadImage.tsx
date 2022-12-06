@@ -1,7 +1,11 @@
+import FileDragAndDrop from "../components/FileDragAndDrop";
+import "./UploadImage.css"
+
 const UploadImage = () => {
     return (
         <>
-            hello
+            <FileDragAndDrop></FileDragAndDrop>
+            <button className="ColorButton">Color!</button>
         </>
     );
 };

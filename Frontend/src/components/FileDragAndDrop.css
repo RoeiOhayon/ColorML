@@ -1,0 +1,33 @@
+.FileUpload {
+    margin-top: 10vh !important;
+}
+
+.FileUploadBackground {
+    width: 58vw;
+    height: 55vh;
+    border-radius: 60px;
+    border: 0;
+    background: rgb(215,208,253);
+    background: linear-gradient(90deg, rgba(215,208,253,1) 0%, rgba(245,159,165,1) 100%);
+    position: relative;
+    cursor: pointer;
+}
+
+.PlusIcon {
+    opacity: 0.5;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 14vh;
+    height: 14vh;
+}
+
+.HelperText {
+    position:relative;
+    padding-top: 40%;
+}
