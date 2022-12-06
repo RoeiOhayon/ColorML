@@ -6,20 +6,14 @@ import plusIcon from "../assets/plus-icon.png";
 const fileTypes = ["JPEG", "PNG", "GIF", "jpg"];
 
 const FileDragAndDrop = () => {
-    const [file, setFile] = useState(null);
     const [imagePreview, setImagePreview] = useState("");
-    const handleChange = (file: any) => {
-    setFile(file);
-    let imageSrc = null;
-    
-    const reader  = new FileReader();
-    reader.onload = () => {
-        if (reader.result) {
+    const handleChange = (file: FileList) => {
+        const reader  = new FileReader();
+        reader.onload = () => {
             setImagePreview(`url(${reader.result})`);
         }
-     }
-     reader.readAsDataURL(file[0]);
-  };
+        reader.readAsDataURL(file[0]);
+    };
 
   return (
     <div className="FileUpload">
@@ -32,15 +26,13 @@ const FileDragAndDrop = () => {
       >
         <div className="FileUploadBackground" style={imagePreview ? {backgroundImage: imagePreview} : {}}>
             {
-            imagePreview ?
-                <></>
-                :
-                <>
-                    <img src={plusIcon} className="PlusIcon"></img>
-                    <div className="HelperText">
-                        <u>Upload</u> or drop a file here
-                    </div>
-                </>
+                imagePreview ? <></> :
+                    <>
+                        <img src={plusIcon} className="PlusIcon"></img>
+                        <div className="HelperText">
+                            <u>Upload</u> or drop a file here
+                        </div>
+                    </>
             }
         </div>
         </FileUploader>
