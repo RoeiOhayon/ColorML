@@ -7,13 +7,13 @@ const Navbar = () => {
         <Container className="Navbar pt-2">
             <Row>
                 <Col>
-                    <NavigationButton to="uploadImage" content="Color" />
+                    <NavigationButton to="/uploadImage" content="Color" />
                 </Col>
                 <Col>
                     <NavigationButton to="/" content="Home" />
                 </Col>
                 <Col>
-                    <NavigationButton to="/" content="About" />
+                    <NavigationButton to="/about" content="About" />
                 </Col>
             </Row>
         </Container>

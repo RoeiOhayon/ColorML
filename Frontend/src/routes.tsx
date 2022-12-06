@@ -7,14 +7,14 @@ const routes = [
     element: <App />,
     children: [
       {
-        path: "uploadImage",
+        path: "/uploadImage",
         element: <UploadImage />,
-      }
+      },
+      {
+        path: "/About",
+        element: <UploadImage />,
+      },
     ]
-  },
-  {
-    path: "uploadImage",
-    element: <UploadImage />,
   },
 ];
 
