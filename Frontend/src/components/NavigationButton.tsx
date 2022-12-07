@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import "./NavigationButton.css";
+import GradientButton from "./GradientButton";
 
 type NavigationButtonProps = {
     content: string,
-    to: string
+    to: string,
 }
 
 const NavigationButton = (props: NavigationButtonProps) => {
@@ -13,9 +13,12 @@ const NavigationButton = (props: NavigationButtonProps) => {
     return (
         <>
             <Link to={props.to} style={{textDecoration: 'none'}}>
-                <button className="GradientButton" style={location.pathname === props.to ? {background: "linear-gradient(90deg, rgba(225,206,241,1) 0%, rgba(219,213,254,1) 100%)"} : {}}>
+                <GradientButton
+                  isFill={location.pathname === props.to}
+                  fromColor="#e1cef1"
+                  toColor="#dbd5fe">
                     {props.content}
-                </button>
+                </GradientButton>
             </Link>
         </>
     );
