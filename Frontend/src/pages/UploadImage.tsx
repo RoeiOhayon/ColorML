@@ -1,20 +1,21 @@
 import FileDragAndDrop from "../components/FileDragAndDrop";
 import GradientButton from "../components/GradientButton";
 import "./UploadImage.css"
+import colorApi from "../apis/color";
 
 const UploadImage = () => {
     return (
         <>
-            <FileDragAndDrop></FileDragAndDrop>
+            <FileDragAndDrop />
             <GradientButton
-                  className="ColorButton"
-                  onClick={() => alert("hi")}
-                  isFill={true}
-                  fromColor="#f9f3ff"
-                  toColor="#abd4ff"
-                  lightenOnHover={true}>
-                    Color!
-                </GradientButton>
+              className="ColorButton"
+              onClick={() => alert(colorApi.colorImage("hi"))}
+              isFill={true}
+              fromColor="#f9f3ff"
+              toColor="#abd4ff"
+              lightenOnHover={true}>
+                Color!
+            </GradientButton>
         </>
     );
 };
