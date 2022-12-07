@@ -6,8 +6,8 @@ const UploadImage = () => {
     return (
         <>
             <FileDragAndDrop></FileDragAndDrop>
-            <button className="ColorButton">Color!</button>
             <GradientButton
+                  className="ColorButton"
                   onClick={() => alert("hi")}
                   isFill={true}
                   fromColor="#f9f3ff"

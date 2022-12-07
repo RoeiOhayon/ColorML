@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./GradientButton.css"
 
 type GradientButtonProps = {
+    className?: string
     fromColor: string
     toColor: string
     isFill: boolean
@@ -20,7 +21,7 @@ const GradientButton = (props: GradientButtonProps) => {
     };
 
     return (
-        <button onClick={props.onClick} className="GradientButton" style={style} onMouseOver={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)}>
+        <button onClick={props.onClick} className={`GradientButton ${props.className}`} style={style} onMouseOver={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)}>
             {props.children}
         </button>
     );
