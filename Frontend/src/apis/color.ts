@@ -2,6 +2,14 @@ import axios from 'axios';
 
 export default {
     colorImage: (image: string): string => {
-        return image
+        axios.get(`localhost:8000/colorize/${image}`)
+            .then(data => {
+                return data.data;
+            })
+            .catch(e => {
+                alert(e)
+            })
+        
+        return "";
     }
 };
