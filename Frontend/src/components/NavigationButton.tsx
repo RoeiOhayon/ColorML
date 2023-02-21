@@ -16,7 +16,7 @@ const NavigationButton = (props: NavigationButtonProps) => {
                 <GradientButton
                   isFill={location.pathname === props.to}
                   fromColor="#e1cef1"
-                  toColor="#dbd5fe">
+                  toColor="#f59fa5">
                     {props.content}
                 </GradientButton>
             </Link>

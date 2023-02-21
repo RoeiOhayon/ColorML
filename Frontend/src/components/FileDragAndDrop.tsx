@@ -1,15 +1,18 @@
 import { useState } from "react";
 import { FileUploader } from "react-drag-drop-files";
+import useImageStore from "../store/image"
 import "./FileDragAndDrop.css"
 import plusIcon from "../assets/plus-icon.png";
 
 const fileTypes = ["JPEG", "PNG", "GIF", "jpg"];
 
 const FileDragAndDrop = () => {
+    const setImage = useImageStore((state) => state.setImage);
     const [imagePreview, setImagePreview] = useState("");
     const handleChange = (file: FileList) => {
         const reader  = new FileReader();
         reader.onload = () => {
+            setImage(`${reader.result}`)
             setImagePreview(`url(${reader.result})`);
         }
         reader.readAsDataURL(file[0]);
@@ -24,7 +27,7 @@ const FileDragAndDrop = () => {
         types={fileTypes}
         dropMessageStyle={{backgroundColor: 'transparent', border: 0}}
       >
-        <div className="FileUploadBackground" style={imagePreview ? {backgroundImage: imagePreview} : {}}>
+        <div className="FileUploadBackground" style={imagePreview ? {backgroundImage: imagePreview, opacity: 0.8, backgroundSize: "cover"} : {}}>
             {
                 imagePreview ? <></> :
                     <>
